@@ -15,13 +15,13 @@ import javax.inject.Inject
 @HiltViewModel
 class SecondViewModel @Inject constructor(
     @ApplicationContext private val context: Context
-    ): ViewModel(), LifecycleObserver {
+) : ViewModel(), LifecycleObserver {
 
     val sampleLiveData: LiveData<String> get() = _sampleLiveData
     private val _sampleLiveData = MediatorLiveData<String>()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    private fun onResume(){
+    private fun onResume() {
         _sampleLiveData.postValue(context.resources.getString(R.string.second_item))
     }
 }

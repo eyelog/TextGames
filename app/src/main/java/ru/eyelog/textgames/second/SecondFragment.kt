@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.fragment_main.tvText
 import ru.eyelog.textgames.R
 
 @AndroidEntryPoint
-class SecondFragment: Fragment() {
+class SecondFragment : Fragment() {
 
     private val viewModel: SecondViewModel by activityViewModels()
 
