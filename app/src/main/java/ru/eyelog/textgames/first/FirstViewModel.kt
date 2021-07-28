@@ -1,6 +1,12 @@
 package ru.eyelog.textgames.first
 
 import android.content.Context
+import android.graphics.Color
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.ImageSpan
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LiveData
@@ -15,13 +21,33 @@ import javax.inject.Inject
 @HiltViewModel
 class FirstViewModel @Inject constructor(
     @ApplicationContext private val context: Context
-    ) : ViewModel(), LifecycleObserver{
+) : ViewModel(), LifecycleObserver {
 
-    val sampleLiveData: LiveData<String> get() = _sampleLiveData
-    private val _sampleLiveData = MediatorLiveData<String>()
+    val sampleLiveData: LiveData<SpannableString> get() = _sampleLiveData
+    private val _sampleLiveData = MediatorLiveData<SpannableString>()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    private fun onResume(){
-        _sampleLiveData.postValue(context.resources.getString(R.string.first_item))
+    private fun onResume() {
+        _sampleLiveData.postValue(getSpannableString())
+    }
+
+    private fun getSpannableString(): SpannableString {
+        val source = context.resources.getString(R.string.first_item) + "  "
+        val spannableString = SpannableString(source)
+
+        ContextCompat.getDrawable(context, R.drawable.icon)?.let { image ->
+            image.setBounds(0, 0, image.intrinsicWidth, image.intrinsicHeight)
+            spannableString.setSpan(
+                ImageSpan(
+                    image,
+                    ImageSpan.ALIGN_BASELINE
+                ),
+                source.length - 1,
+                source.length,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+
+        return spannableString
     }
 }
