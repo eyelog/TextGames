@@ -1,4 +1,4 @@
-package ru.eyelog.textgames.second
+package ru.eyelog.textgames.fragments.fragment01
 
 import android.content.Context
 import androidx.lifecycle.Lifecycle

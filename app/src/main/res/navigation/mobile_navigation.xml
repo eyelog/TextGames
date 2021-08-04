@@ -6,10 +6,10 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="ru.eyelog.textgames.first.FirstFragment"
+        android:name="ru.eyelog.textgames.fragments.fragment00.FirstFragment"
         android:label="FirstFragment" />
     <fragment
         android:id="@+id/secondFragment"
-        android:name="ru.eyelog.textgames.second.SecondFragment"
+        android:name="ru.eyelog.textgames.fragments.fragment01.SecondFragment"
         android:label="SecondFragment" />
 </navigation>
