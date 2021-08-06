@@ -3,4 +3,41 @@
 
     <string name="first_item">First</string>
     <string name="second_item">Second</string>
+
+    // Options menu
+    <string name="choose_text">Choose source text</string>
+    <string name="choose_style">Choose style</string>
+    <string name="change_color">Change text color</string>
+    <string name="change_font">Change text font</string>
+    <string name="change_size">Change text size</string>
+
+    <string name="bt_apply">Apply</string>
+
+    // Spinners
+    <string-array name="spinner_texts">
+        <item>Про Федота стрельца</item>
+        <item>Raven</item>
+    </string-array>
+    <string-array name="spinner_styles">
+        <item>Big fat gothic black</item>
+        <item>Just simple and normal</item>
+        <item>Small tiny elvish blue</item>
+    </string-array>
+    <string-array name="spinner_colors">
+        <item>Black</item>
+        <item>Red</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="spinner_fonts">
+        <item>Arial</item>
+        <item>Gothic</item>
+        <item>Elvish</item>
+    </string-array>
+    <string-array name="spinner_size">
+        <item>8dp</item>
+        <item>12dp</item>
+        <item>16dp</item>
+        <item>24dp</item>
+        <item>32dp</item>
+    </string-array>
 </resources>

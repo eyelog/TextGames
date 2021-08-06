@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/choose_text"
+        android:title="@string/choose_text"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/choose_style"
+        android:title="@string/choose_style"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/change_color"
+        android:title="@string/change_color"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/change_font"
+        android:title="@string/change_font"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/change_size"
+        android:title="@string/change_size"
+        app:showAsAction="never"/>
+
+</menu>
