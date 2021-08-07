@@ -15,8 +15,8 @@
 
     // Spinners
     <string-array name="spinner_texts">
-        <item>Про Федота стрельца</item>
-        <item>Raven</item>
+        <item>texts/novel.txt</item>
+        <item>texts/raven.txt</item>
     </string-array>
     <string-array name="spinner_styles">
         <item>Big fat gothic black</item>
@@ -27,17 +27,25 @@
         <item>Black</item>
         <item>Red</item>
         <item>Green</item>
+        <item>Blue</item>
     </string-array>
     <string-array name="spinner_fonts">
-        <item>Arial</item>
-        <item>Gothic</item>
-        <item>Elvish</item>
+        <item>font/andantino.ttf</item>
+        <item>font/deutsch_gothic.ttf</item>
+        <item>font/drpodecorru.ttf</item>
+        <item>font/harlequinade.ttf</item>
+        <item>font/runic.ttf</item>
+        <item>font/rurintania.ttf</item>
+        <item>font/victorian_gothic.ttf</item>
+        <item>font/wooden.ttf</item>
     </string-array>
     <string-array name="spinner_size">
-        <item>8dp</item>
-        <item>12dp</item>
-        <item>16dp</item>
-        <item>24dp</item>
-        <item>32dp</item>
+        <item>8</item>
+        <item>12</item>
+        <item>16</item>
+        <item>24</item>
+        <item>32</item>
+        <item>42</item>
+        <item>56</item>
     </string-array>
 </resources>

@@ -5,15 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_main.tvText
 import ru.eyelog.textgames.R
-import ru.eyelog.textgames.fragments.DataMaster
 import ru.eyelog.textgames.fragments.base.BaseFragment
-import ru.eyelog.textgames.models.TransportModel
+import ru.eyelog.textgames.models.TextFormatModel
 
 @AndroidEntryPoint
 class SecondFragment : BaseFragment() {
@@ -33,12 +30,12 @@ class SecondFragment : BaseFragment() {
 
         lifecycle.addObserver(viewModel)
 
-        viewModel.sampleLiveData.observe(viewLifecycleOwner, {
+        viewModel.textSourceLiveData.observe(viewLifecycleOwner, {
             tvText.text = it
         })
     }
 
-    override fun setTextData(data: TransportModel) {
+    override fun setTextData(data: TextFormatModel) {
         Log.i("Logcat", "$data")
     }
 }

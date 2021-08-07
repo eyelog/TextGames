@@ -1,6 +1,6 @@
 package ru.eyelog.textgames.models
 
-data class TransportModel(
+data class TextFormatModel(
     val dataType: DataType,
     val payload: String
 )

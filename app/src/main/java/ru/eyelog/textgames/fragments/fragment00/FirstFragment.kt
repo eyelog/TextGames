@@ -1,21 +1,16 @@
 package ru.eyelog.textgames.fragments.fragment00
 
+import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_main.tvText
 import ru.eyelog.textgames.R
-import ru.eyelog.textgames.fragments.DataMaster
 import ru.eyelog.textgames.fragments.base.BaseFragment
-import ru.eyelog.textgames.models.TransportModel
+import ru.eyelog.textgames.models.TextFormatModel
 
 @AndroidEntryPoint
 class FirstFragment : BaseFragment() {
@@ -35,12 +30,25 @@ class FirstFragment : BaseFragment() {
 
         lifecycle.addObserver(viewModel)
 
-        viewModel.sampleLiveData.observe(viewLifecycleOwner, {
+        viewModel.textSourceLiveData.observe(viewLifecycleOwner, {
             tvText.text = it
+        })
+
+        viewModel.colorLiveData.observe(viewLifecycleOwner, {
+            tvText.setTextColor(it)
+        })
+
+        viewModel.fontLiveData.observe(viewLifecycleOwner, {
+            val face = Typeface.createFromAsset(requireContext().assets, it)
+            tvText.typeface = face
+        })
+
+        viewModel.sizeLiveData.observe(viewLifecycleOwner, {
+            tvText.textSize = it
         })
     }
 
-    override fun setTextData(data: TransportModel) {
-        Log.i("Logcat ", "$data")
+    override fun setTextData(data: TextFormatModel) {
+        viewModel.setTextFormat(data)
     }
 }

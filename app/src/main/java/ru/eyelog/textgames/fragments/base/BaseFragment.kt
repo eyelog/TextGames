@@ -1,7 +1,6 @@
 package ru.eyelog.textgames.fragments.base
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -15,7 +14,7 @@ import androidx.fragment.app.Fragment
 import ru.eyelog.textgames.R
 import ru.eyelog.textgames.fragments.DataMaster
 import ru.eyelog.textgames.models.DataType
-import ru.eyelog.textgames.models.TransportModel
+import ru.eyelog.textgames.models.TextFormatModel
 
 abstract class BaseFragment: Fragment(), DataMaster{
 
@@ -48,8 +47,7 @@ abstract class BaseFragment: Fragment(), DataMaster{
                 tvAlertTitle.text = getString(R.string.choose_text)
                 spinner.adapter = setSpinnerArray(R.array.spinner_texts)
                 alertButton.setOnClickListener {
-                    Log.i("Logcat ", "${spinner.selectedItem}")
-                    setTextData(TransportModel(DataType.TEXT_SOURCE, spinner.selectedItem.toString()))
+                    setTextData(TextFormatModel(DataType.TEXT_SOURCE, spinner.selectedItem.toString()))
                     dialog.cancel()
                 }
             }
@@ -57,8 +55,7 @@ abstract class BaseFragment: Fragment(), DataMaster{
                 tvAlertTitle.text = getString(R.string.choose_style)
                 spinner.adapter = setSpinnerArray(R.array.spinner_styles)
                 alertButton.setOnClickListener {
-                    Log.i("Logcat ", "${spinner.selectedItem}")
-                    setTextData(TransportModel(DataType.STYLE, spinner.selectedItem.toString()))
+                    setTextData(TextFormatModel(DataType.STYLE, spinner.selectedItem.toString()))
                     dialog.cancel()
                 }
             }
@@ -66,8 +63,7 @@ abstract class BaseFragment: Fragment(), DataMaster{
                 tvAlertTitle.text = getString(R.string.change_color)
                 spinner.adapter = setSpinnerArray(R.array.spinner_colors)
                 alertButton.setOnClickListener {
-                    Log.i("Logcat ", "${spinner.selectedItem}")
-                    setTextData(TransportModel(DataType.COLOR, spinner.selectedItem.toString()))
+                    setTextData(TextFormatModel(DataType.COLOR, spinner.selectedItem.toString()))
                     dialog.cancel()
                 }
             }
@@ -75,8 +71,7 @@ abstract class BaseFragment: Fragment(), DataMaster{
                 tvAlertTitle.text = getString(R.string.change_font)
                 spinner.adapter = setSpinnerArray(R.array.spinner_fonts)
                 alertButton.setOnClickListener {
-                    Log.i("Logcat ", "${spinner.selectedItem}")
-                    setTextData(TransportModel(DataType.FONT, spinner.selectedItem.toString()))
+                    setTextData(TextFormatModel(DataType.FONT, spinner.selectedItem.toString()))
                     dialog.cancel()
                 }
             }
@@ -84,8 +79,7 @@ abstract class BaseFragment: Fragment(), DataMaster{
                 tvAlertTitle.text = getString(R.string.change_size)
                 spinner.adapter = setSpinnerArray(R.array.spinner_size)
                 alertButton.setOnClickListener {
-                    Log.i("Logcat ", "${spinner.selectedItem}")
-                    setTextData(TransportModel(DataType.SIZE, spinner.selectedItem.toString()))
+                    setTextData(TextFormatModel(DataType.SIZE, spinner.selectedItem.toString()))
                     dialog.cancel()
                 }
             }
@@ -103,5 +97,5 @@ abstract class BaseFragment: Fragment(), DataMaster{
         return adapter
     }
 
-    abstract override fun setTextData(data: TransportModel)
+    abstract override fun setTextData(data: TextFormatModel)
 }
