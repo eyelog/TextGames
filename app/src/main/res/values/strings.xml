@@ -6,7 +6,6 @@
 
     // Options menu
     <string name="choose_text">Choose source text</string>
-    <string name="choose_style">Choose style</string>
     <string name="change_color">Change text color</string>
     <string name="change_font">Change text font</string>
     <string name="change_size">Change text size</string>
@@ -18,11 +17,6 @@
         <item>texts/novel.txt</item>
         <item>texts/raven.txt</item>
     </string-array>
-    <string-array name="spinner_styles">
-        <item>Big fat gothic black</item>
-        <item>Just simple and normal</item>
-        <item>Small tiny elvish blue</item>
-    </string-array>
     <string-array name="spinner_colors">
         <item>Black</item>
         <item>Red</item>
@@ -30,14 +24,14 @@
         <item>Blue</item>
     </string-array>
     <string-array name="spinner_fonts">
-        <item>font/andantino.ttf</item>
-        <item>font/deutsch_gothic.ttf</item>
-        <item>font/drpodecorru.ttf</item>
-        <item>font/harlequinade.ttf</item>
-        <item>font/runic.ttf</item>
-        <item>font/rurintania.ttf</item>
-        <item>font/victorian_gothic.ttf</item>
-        <item>font/wooden.ttf</item>
+        <item>andantino</item>
+        <item>deutsch_gothic</item>
+        <item>drpodecorru</item>
+        <item>harlequinade</item>
+        <item>runic</item>
+        <item>rurintania</item>
+        <item>victorian_gothic</item>
+        <item>wooden</item>
     </string-array>
     <string-array name="spinner_size">
         <item>8</item>

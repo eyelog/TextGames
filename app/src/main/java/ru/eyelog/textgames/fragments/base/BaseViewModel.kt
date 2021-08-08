@@ -18,14 +18,11 @@ abstract class BaseViewModel(private val context: Context) : ViewModel() {
     val textSourceLiveData: LiveData<String> get() = _textSourceLiveData
     private val _textSourceLiveData = MediatorLiveData<String>()
 
-    val styleLiveData: LiveData<Int> get() = _styleLiveData
-    private val _styleLiveData = MediatorLiveData<Int>()
-
     val colorLiveData: LiveData<Int> get() = _colorLiveData
     private val _colorLiveData = MediatorLiveData<Int>()
 
-    val fontLiveData: LiveData<String> get() = _fontLiveData
-    private val _fontLiveData = MediatorLiveData<String>()
+    val fontLiveData: LiveData<Int> get() = _fontLiveData
+    private val _fontLiveData = MediatorLiveData<Int>()
 
     val sizeLiveData: LiveData<Float> get() = _sizeLiveData
     private val _sizeLiveData = MediatorLiveData<Float>()
@@ -35,9 +32,6 @@ abstract class BaseViewModel(private val context: Context) : ViewModel() {
             DataType.TEXT_SOURCE -> {
                 readFromFile(data.payload)
             }
-            DataType.STYLE -> {
-
-            }
             DataType.COLOR -> {
                 val foundIndex = context.resources.getStringArray(R.array.spinner_colors)
                     .indexOf(
@@ -46,7 +40,9 @@ abstract class BaseViewModel(private val context: Context) : ViewModel() {
                 _colorLiveData.postValue(context.resources.getIntArray(R.array.colors_list)[foundIndex])
             }
             DataType.FONT -> {
-                _fontLiveData.postValue(data.payload)
+                _fontLiveData.postValue(
+                    context.resources.getIdentifier(data.payload, "font", context.packageName)
+                )
             }
             DataType.SIZE -> {
                 _sizeLiveData.postValue(data.payload.toFloat())

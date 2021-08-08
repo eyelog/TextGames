@@ -11,11 +11,6 @@
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/choose_style"
-        android:title="@string/choose_style"
-        app:showAsAction="never"/>
-
-    <item
         android:id="@+id/change_color"
         android:title="@string/change_color"
         app:showAsAction="never"/>

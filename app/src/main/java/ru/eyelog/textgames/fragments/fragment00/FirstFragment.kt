@@ -1,10 +1,15 @@
 package ru.eyelog.textgames.fragments.fragment00
 
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.widget.TextViewCompat
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_main.tvText
@@ -39,7 +44,7 @@ class FirstFragment : BaseFragment() {
         })
 
         viewModel.fontLiveData.observe(viewLifecycleOwner, {
-            val face = Typeface.createFromAsset(requireContext().assets, it)
+            val face = ResourcesCompat.getFont(requireContext(), it)
             tvText.typeface = face
         })
 

@@ -14,8 +14,6 @@ class FirstViewModel @Inject constructor(
     @ApplicationContext private val context: Context
 ) : BaseViewModel(context), LifecycleObserver {
 
-
-
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     private fun onResume() {
         readFromFile("texts/novel.txt")
