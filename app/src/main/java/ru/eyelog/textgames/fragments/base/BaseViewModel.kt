@@ -15,9 +15,6 @@ import java.io.InputStreamReader
 
 abstract class BaseViewModel(private val context: Context) : ViewModel() {
 
-    val textSourceLiveData: LiveData<String> get() = _textSourceLiveData
-    private val _textSourceLiveData = MediatorLiveData<String>()
-
     val colorLiveData: LiveData<Int> get() = _colorLiveData
     private val _colorLiveData = MediatorLiveData<Int>()
 
@@ -50,7 +47,7 @@ abstract class BaseViewModel(private val context: Context) : ViewModel() {
         }
     }
 
-    internal fun readFromFile(fileName: String) {
+    internal fun readFromFile(fileName: String) : String {
         var outData = ""
         try {
             val inputStream = context.assets.open(fileName)
@@ -68,6 +65,6 @@ abstract class BaseViewModel(private val context: Context) : ViewModel() {
         } catch (e: IOException) {
             Log.e("Logcat", "Can not read file: $e")
         }
-        _textSourceLiveData.postValue(outData)
+        return outData
     }
 }
