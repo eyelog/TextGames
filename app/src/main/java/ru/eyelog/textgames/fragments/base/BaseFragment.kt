@@ -47,7 +47,7 @@ abstract class BaseFragment : Fragment(), DataMaster {
                 tvAlertTitle.text = getString(R.string.choose_text)
                 spinner.adapter = setSpinnerArray(R.array.spinner_texts)
                 alertButton.setOnClickListener {
-                    setTextData(
+                    setTextFormatData(
                         TextFormatModel(
                             DataType.TEXT_SOURCE,
                             spinner.selectedItem.toString()
@@ -60,7 +60,7 @@ abstract class BaseFragment : Fragment(), DataMaster {
                 tvAlertTitle.text = getString(R.string.change_color)
                 spinner.adapter = setSpinnerArray(R.array.spinner_colors)
                 alertButton.setOnClickListener {
-                    setTextData(
+                    setTextFormatData(
                         TextFormatModel(
                             DataType.COLOR,
                             spinner.selectedItem.toString()
@@ -73,7 +73,7 @@ abstract class BaseFragment : Fragment(), DataMaster {
                 tvAlertTitle.text = getString(R.string.change_font)
                 spinner.adapter = setSpinnerArray(R.array.spinner_fonts)
                 alertButton.setOnClickListener {
-                    setTextData(
+                    setTextFormatData(
                         TextFormatModel(
                             DataType.FONT,
                             spinner.selectedItem.toString()
@@ -86,7 +86,7 @@ abstract class BaseFragment : Fragment(), DataMaster {
                 tvAlertTitle.text = getString(R.string.change_size)
                 spinner.adapter = setSpinnerArray(R.array.spinner_size)
                 alertButton.setOnClickListener {
-                    setTextData(
+                    setTextFormatData(
                         TextFormatModel(
                             DataType.SIZE,
                             spinner.selectedItem.toString()
@@ -109,5 +109,5 @@ abstract class BaseFragment : Fragment(), DataMaster {
         return adapter
     }
 
-    abstract override fun setTextData(data: TextFormatModel)
+    abstract override fun setTextFormatData(data: TextFormatModel)
 }

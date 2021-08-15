@@ -1,14 +1,19 @@
 package ru.eyelog.textgames.fragments.fragment01
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.res.ResourcesCompat
 import androidx.viewpager.widget.PagerAdapter
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.android.synthetic.main.fragment_main.tvText
 import ru.eyelog.textgames.R
+import ru.eyelog.textgames.exts.getLastVisibleCharacter
+import ru.eyelog.textgames.models.StyleDataText
 import javax.inject.Inject
 
 class PagerTextAdapter @Inject constructor(
@@ -16,10 +21,26 @@ class PagerTextAdapter @Inject constructor(
 ) : PagerAdapter() {
 
     private var stringData: List<String> = emptyList()
-    var onMeasureListener: ((String) -> Unit)? = null
+    var onMeasureListener: ((Int) -> Unit)? = null
+
+    private var currentTextColor: Int? = null
+    private var currentTextFont: Int? = null
+    private var currentTextSize: Float? = null
 
     fun setData(inData: List<String>) {
         stringData = inData
+    }
+
+    fun setTextStyle(styleDataText: StyleDataText) {
+        styleDataText.textColor?.let {
+            currentTextColor = it
+        }
+        styleDataText.textFont?.let {
+            currentTextFont = it
+        }
+        styleDataText.textSize?.let {
+            currentTextSize = it
+        }
     }
 
     override fun getCount(): Int {
@@ -36,25 +57,20 @@ class PagerTextAdapter @Inject constructor(
 
         val tvText = layout.findViewById<TextView>(R.id.tvItemText)
         tvText.text = stringData[position]
-        tvText.post {
-
-            val textWidth: Float = tvText.paint.measureText(stringData[position])
-            val measure = tvText.length()
-
-//            val height: Int = tvText.getHeight()
-//            val scrollY: Int = tvText.getScrollY()
-//            val layout: Layout = tvText.getLayout()
-//
-//            val firstVisibleLineNumber: Int = layout.getLineForVertical(scrollY)
-//            val lastVisibleLineNumber: Int = layout.getLineForVertical(scrollY + height)
-
-//            val start: Int = tvText.layout.getLineStart(0)
-//            val end: Int = tvText.layout.getLineEnd(tvText.lineCount - 1)
-
-            val displayed: String = tvText.text.toString().substring(0, measure)
-            onMeasureListener?.invoke("textWidth $textWidth; measure $measure \n $displayed")
+        currentTextColor?.let {  tvText.setTextColor(it)}
+        currentTextFont?.let {
+            val face = ResourcesCompat.getFont(context, it)
+            tvText.typeface = face
+        }
+        currentTextSize?.let {
+            tvText.textSize = it
         }
 
+        tvText.post {
+            onMeasureListener?.invoke(tvText.getLastVisibleCharacter())
+
+//            Log.i("Logcat", "stringData[position] ${stringData[position].substring(0, tvText.getLastVisibleCharacter())}")
+        }
 
         container.addView(layout)
 

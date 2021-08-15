@@ -4,5 +4,5 @@ import ru.eyelog.textgames.models.TextFormatModel
 
 interface DataMaster {
 
-    fun setTextData(data: TextFormatModel)
+    fun setTextFormatData(data: TextFormatModel)
 }
