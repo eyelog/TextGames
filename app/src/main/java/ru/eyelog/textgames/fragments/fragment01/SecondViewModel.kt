@@ -26,6 +26,7 @@ class SecondViewModel @Inject constructor(
 
     private val observer: Observer<String> = Observer<String> {
         mainText = it
+        textList.clear()
         _textListSourceLiveData.postValue(DataTextList(listOf(it), true))
     }
 
