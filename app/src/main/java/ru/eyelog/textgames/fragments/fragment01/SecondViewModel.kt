@@ -38,6 +38,7 @@ class SecondViewModel @Inject constructor(
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     private fun onStop(){
         textSourceLiveData.removeObserver(observer)
+        textList.clear()
     }
 
     fun setCurrentLastIndex(lastCharIndex: Int) {

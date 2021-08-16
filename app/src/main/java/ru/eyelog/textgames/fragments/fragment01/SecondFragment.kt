@@ -36,14 +36,16 @@ class SecondFragment : BaseFragment() {
 
         lifecycle.addObserver(viewModel)
 
-        viewModel.textListSourceLiveData.observe(viewLifecycleOwner, {
-            pagerTextAdapter.onMeasureListener = { index ->
-                if (it.shouldSeparateText) {
-                    viewModel.setCurrentLastIndex(index)
+        viewModel.textListSourceLiveData.observe(viewLifecycleOwner, { dataList ->
+            dataList?.let {
+                pagerTextAdapter.onMeasureListener = { index ->
+                    if (it.shouldSeparateText) {
+                        viewModel.setCurrentLastIndex(index)
+                    }
                 }
+                pagerTextAdapter.setData(it.text)
+                viewPager.adapter = pagerTextAdapter
             }
-            pagerTextAdapter.setData(it.text)
-            viewPager.adapter = pagerTextAdapter
         })
 
         viewModel.colorLiveData.observe(viewLifecycleOwner, {
