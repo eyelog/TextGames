@@ -1,7 +1,6 @@
 package ru.eyelog.textgames.fragments.fragment01
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.res.ResourcesCompat
 import androidx.viewpager.widget.PagerAdapter
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.android.synthetic.main.fragment_main.tvText
 import ru.eyelog.textgames.R
 import ru.eyelog.textgames.exts.getLastVisibleCharacter
 import ru.eyelog.textgames.models.StyleDataText
@@ -68,8 +66,6 @@ class PagerTextAdapter @Inject constructor(
 
         tvText.post {
             onMeasureListener?.invoke(tvText.getLastVisibleCharacter())
-
-//            Log.i("Logcat", "stringData[position] ${stringData[position].substring(0, tvText.getLastVisibleCharacter())}")
         }
 
         container.addView(layout)
