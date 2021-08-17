@@ -53,11 +53,13 @@ class SecondFragment : BaseFragment() {
 
         viewModel.fontLiveData.observe(viewLifecycleOwner, {
             pagerTextAdapter.setTextStyle(StyleDataText(textFont = it))
+            viewModel.refreshTextSource()
             viewPager.adapter = pagerTextAdapter
         })
 
         viewModel.sizeLiveData.observe(viewLifecycleOwner, {
             pagerTextAdapter.setTextStyle(StyleDataText(textSize = it))
+            viewModel.refreshTextSource()
             viewPager.adapter = pagerTextAdapter
         })
     }

@@ -24,11 +24,7 @@ class SecondViewModel @Inject constructor(
     val textListSourceLiveData: LiveData<DataTextList> get() = _textListSourceLiveData
     private val _textListSourceLiveData = MediatorLiveData<DataTextList>()
 
-    private val observer: Observer<String> = Observer<String> {
-        mainText = it
-        textList.clear()
-        _textListSourceLiveData.postValue(DataTextList(listOf(it), true))
-    }
+    private val observer: Observer<String> = Observer<String>(::refreshTextSource)
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     private fun onResume() {
@@ -40,6 +36,12 @@ class SecondViewModel @Inject constructor(
     private fun onStop(){
         textSourceLiveData.removeObserver(observer)
         textList.clear()
+    }
+
+    fun refreshTextSource(textSource: String? = null){
+        textSource?.let { mainText = textSource }
+        textList.clear()
+        _textListSourceLiveData.postValue(DataTextList(listOf(mainText), true))
     }
 
     fun setCurrentLastIndex(lastCharIndex: Int) {
