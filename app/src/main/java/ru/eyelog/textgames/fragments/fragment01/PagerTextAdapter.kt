@@ -55,7 +55,7 @@ class PagerTextAdapter @Inject constructor(
 
         val tvText = layout.findViewById<TextView>(R.id.tvItemText)
         tvText.text = stringData[position]
-        currentTextColor?.let {  tvText.setTextColor(it)}
+        currentTextColor?.let { tvText.setTextColor(it) }
         currentTextFont?.let {
             val face = ResourcesCompat.getFont(context, it)
             tvText.typeface = face
@@ -64,9 +64,9 @@ class PagerTextAdapter @Inject constructor(
             tvText.textSize = it
         }
 
-        tvText.post {
+        tvText.postDelayed({
             onMeasureListener?.invoke(tvText.getLastVisibleCharacter())
-        }
+        }, 300L)
 
         container.addView(layout)
 
