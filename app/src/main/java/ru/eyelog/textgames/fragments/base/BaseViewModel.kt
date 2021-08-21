@@ -16,7 +16,7 @@ import java.io.InputStreamReader
 abstract class BaseViewModel(private val context: Context) : ViewModel() {
 
     val textSourceLiveData: LiveData<String> get() = _textSourceLiveData
-    internal val _textSourceLiveData = MediatorLiveData<String>()
+    private val _textSourceLiveData = MediatorLiveData<String>()
 
     val colorLiveData: LiveData<Int> get() = _colorLiveData
     private val _colorLiveData = MediatorLiveData<Int>()

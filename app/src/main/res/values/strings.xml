@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">TextGames</string>
 
-    <string name="first_item">First</string>
-    <string name="second_item">Second</string>
-    <string name="spannable_item">Spanned</string>
+    <string name="first_item">Simple text</string>
+    <string name="second_item">Pages text</string>
+    <string name="spannable_item">Spanned sample</string>
+    <string name="spannable_flags_item">Spannable flags</string>
+    <string name="pre_comp_item">Precomputed text</string>
 
     // Options menu
     <string name="choose_text">Choose source text</string>
@@ -25,6 +27,7 @@
         <item>Blue</item>
     </string-array>
     <string-array name="spinner_fonts">
+        <item>robotoregular</item>
         <item>andantino</item>
         <item>deutsch_gothic</item>
         <item>drpodecorru</item>

@@ -1,36 +1,33 @@
 package ru.eyelog.textgames.fragments.base
 
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import ru.eyelog.textgames.R
+import ru.eyelog.textgames.activity.MainActivity
 import ru.eyelog.textgames.fragments.DataMaster
 import ru.eyelog.textgames.models.DataType
 import ru.eyelog.textgames.models.TextFormatModel
 
 abstract class BaseFragment : Fragment(), DataMaster {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.options_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        showAlertDialog(item.itemId)
-        return super.onOptionsItemSelected(item)
+        (requireActivity() as MainActivity).onPopupMenuListener = {
+            showAlertDialog(it)
+        }
     }
 
     private fun showAlertDialog(itemId: Int) {

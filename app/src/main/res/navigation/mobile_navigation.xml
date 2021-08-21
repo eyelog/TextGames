@@ -7,13 +7,21 @@
     <fragment
         android:id="@+id/firstFragment"
         android:name="ru.eyelog.textgames.fragments.fragment00.FirstFragment"
-        android:label="FirstFragment" />
+        android:label="@string/first_item" />
     <fragment
         android:id="@+id/secondFragment"
         android:name="ru.eyelog.textgames.fragments.fragment01.SecondFragment"
-        android:label="SecondFragment" />
+        android:label="@string/second_item" />
     <fragment
         android:id="@+id/spannableFragment"
         android:name="ru.eyelog.textgames.fragments.fragment02.SpannableFragment"
-        android:label="SpannedFragment" />
+        android:label="@string/spannable_item" />
+    <fragment
+        android:id="@+id/spanFlagsFragment"
+        android:name="ru.eyelog.textgames.fragments.fragment03.SpanFlagsFragment"
+        android:label="@string/spannable_flags_item" />
+    <fragment
+        android:id="@+id/preCompFragment"
+        android:name="ru.eyelog.textgames.fragments.fragment04.PreCompTextFragment"
+        android:label="@string/pre_comp_item" />
 </navigation>

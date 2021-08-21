@@ -3,16 +3,21 @@
 
     <item
         android:id="@+id/firstFragment"
-        android:icon="@drawable/ic_menu_list"
         android:title="@string/first_item" />
 
     <item
         android:id="@+id/secondFragment"
-        android:icon="@drawable/ic_menu_list"
         android:title="@string/second_item" />
 
     <item
         android:id="@+id/spannableFragment"
-        android:icon="@drawable/ic_menu_list"
         android:title="@string/spannable_item" />
+
+    <item
+        android:id="@+id/spanFlagsFragment"
+        android:title="@string/spannable_flags_item" />
+
+    <item
+        android:id="@+id/preCompFragment"
+        android:title="@string/pre_comp_item" />
 </menu>
