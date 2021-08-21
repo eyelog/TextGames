@@ -3,6 +3,7 @@
 
     <string name="first_item">First</string>
     <string name="second_item">Second</string>
+    <string name="spannable_item">Spanned</string>
 
     // Options menu
     <string name="choose_text">Choose source text</string>
