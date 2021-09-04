@@ -1,14 +1,11 @@
-package ru.eyelog.textgames.fragments.fragment01
+package ru.eyelog.textgames.fragments.fragment05
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_main.tvText
 import kotlinx.android.synthetic.main.fragment_pager.viewPager
 import ru.eyelog.textgames.R
 import ru.eyelog.textgames.fragments.base.BaseFragment
@@ -17,9 +14,9 @@ import ru.eyelog.textgames.models.TextFormatModel
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SecondFragment : BaseFragment() {
+class PagerFragment : BaseFragment() {
 
-    private val viewModel: SecondViewModel by activityViewModels()
+    private val viewModel: PagerViewModel by activityViewModels()
 
     @Inject lateinit var pagerTextAdapter: PagerTextAdapter
 

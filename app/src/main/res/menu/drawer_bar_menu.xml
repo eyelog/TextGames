@@ -6,8 +6,8 @@
         android:title="@string/first_item" />
 
     <item
-        android:id="@+id/secondFragment"
-        android:title="@string/second_item" />
+        android:id="@+id/styleFragment"
+        android:title="@string/style_item" />
 
     <item
         android:id="@+id/spannableFragment"
@@ -20,4 +20,8 @@
     <item
         android:id="@+id/preCompFragment"
         android:title="@string/pre_comp_item" />
+
+    <item
+        android:id="@+id/pagerFragment"
+        android:title="@string/second_item" />
 </menu>

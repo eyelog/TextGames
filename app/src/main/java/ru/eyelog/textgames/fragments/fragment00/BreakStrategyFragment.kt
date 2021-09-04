@@ -4,25 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_main.tvText
+import kotlinx.android.synthetic.main.fragment_breack_strategy.*
 import ru.eyelog.textgames.R
 import ru.eyelog.textgames.fragments.base.BaseFragment
 import ru.eyelog.textgames.models.TextFormatModel
 
 @AndroidEntryPoint
-class FirstFragment : BaseFragment() {
+class BreakStrategyFragment : BaseFragment() {
 
-    private val viewModel: FirstViewModel by activityViewModels()
+    private val viewModel: BreakStrategyViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_breack_strategy, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,20 +30,21 @@ class FirstFragment : BaseFragment() {
         lifecycle.addObserver(viewModel)
 
         viewModel.textSourceLiveData.observe(viewLifecycleOwner, {
-            tvText.text = it
-        })
-
-        viewModel.colorLiveData.observe(viewLifecycleOwner, {
-            tvText.setTextColor(it)
-        })
-
-        viewModel.fontLiveData.observe(viewLifecycleOwner, {
-            val face = ResourcesCompat.getFont(requireContext(), it)
-            tvText.typeface = face
+            tvSimpleText.text = "Without any strategy\n $it"
+            tvBreakStrategySimpleText.text = "Simple break strategy\n $it"
+            tvBreakStrategyBalancedText.text = "Balanced break strategy\n $it"
+            tvHyphFreqNormalText.text = "Hyphenation Frequency normal strategy\n $it"
+            tvHyphFreqFullText.text = "Hyphenation Frequency full strategy\n $it"
+            tvMultyText.text = "Multy strategy\n $it"
         })
 
         viewModel.sizeLiveData.observe(viewLifecycleOwner, {
-            tvText.textSize = it
+            tvSimpleText.textSize = it
+            tvBreakStrategySimpleText.textSize = it
+            tvBreakStrategyBalancedText.textSize = it
+            tvHyphFreqNormalText.textSize = it
+            tvHyphFreqFullText.textSize = it
+            tvMultyText.textSize = it
         })
     }
 

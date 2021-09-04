@@ -1,4 +1,4 @@
-package ru.eyelog.textgames.fragments.fragment01
+package ru.eyelog.textgames.fragments.fragment05
 
 import android.content.Context
 import androidx.lifecycle.Lifecycle
@@ -14,7 +14,7 @@ import ru.eyelog.textgames.models.DataTextList
 import javax.inject.Inject
 
 @HiltViewModel
-class SecondViewModel @Inject constructor(
+class PagerViewModel @Inject constructor(
     @ApplicationContext private val context: Context
 ) : BaseViewModel(context), LifecycleObserver {
 

@@ -1,4 +1,4 @@
-package ru.eyelog.textgames.fragments.fragment00
+package ru.eyelog.textgames.fragments.fragment01
 
 import android.content.Context
 import androidx.lifecycle.Lifecycle
@@ -10,12 +10,12 @@ import ru.eyelog.textgames.fragments.base.BaseViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class FirstViewModel @Inject constructor(
+class StyleViewModel @Inject constructor(
     @ApplicationContext private val context: Context
 ) : BaseViewModel(context), LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     private fun onResume() {
-        readFromFile("texts/novel.txt")
+        readFromFile("texts/part00.txt")
     }
 }

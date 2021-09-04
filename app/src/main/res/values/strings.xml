@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">TextGames</string>
 
-    <string name="first_item">Simple text</string>
+    <string name="first_item">Break Strategy</string>
+    <string name="style_item">Styles</string>
     <string name="second_item">Pages text</string>
     <string name="spannable_item">Spanned sample</string>
     <string name="spannable_flags_item">Spannable flags</string>

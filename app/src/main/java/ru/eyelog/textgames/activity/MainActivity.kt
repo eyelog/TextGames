@@ -43,10 +43,11 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.firstFragment,
-                R.id.secondFragment,
+                R.id.styleFragment,
                 R.id.spannableFragment,
                 R.id.spanFlagsFragment,
-                R.id.preCompFragment
+                R.id.preCompFragment,
+                R.id.pagerFragment
             ),
             drawerLayout
         )
