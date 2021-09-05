@@ -1,6 +1,12 @@
 package ru.eyelog.textgames.fragments.fragment01
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.SpannedString
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +41,18 @@ class StyleFragment : BaseFragment() {
             tvBreakStrategyBalancedText.text = "Balanced break strategy\n $it"
             tvHyphFreqNormalText.text = "Hyphenation Frequency normal strategy\n $it"
             tvHyphFreqFullText.text = "Hyphenation Frequency full strategy\n $it"
-            tvMultyText.text = "Multy strategy\n $it"
+            tvHyphFreqFullText.setTextAppearance(R.style.TextAppearanceSample)
+            tvMultyText.setTextAppearance(R.style.TextAppearanceSample)
+            val spannedText = SpannableString("Multy strategy\n $it")
+            spannedText.setSpan(
+                ForegroundColorSpan(Color.MAGENTA),
+                0,
+                spannedText.lastIndex,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            tvMultyText.text = spannedText
+            val typeface = resources.getFont(R.font.andantino)
+            tvMultyText.setTypeface(typeface, Typeface.BOLD)
         })
 
         viewModel.sizeLiveData.observe(viewLifecycleOwner, {

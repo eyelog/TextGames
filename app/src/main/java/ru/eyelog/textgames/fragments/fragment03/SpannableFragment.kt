@@ -1,4 +1,4 @@
-package ru.eyelog.textgames.fragments.fragment02
+package ru.eyelog.textgames.fragments.fragment03
 
 import android.content.res.ColorStateList
 import android.graphics.Color

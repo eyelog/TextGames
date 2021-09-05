@@ -1,4 +1,4 @@
-package ru.eyelog.textgames.fragments.fragment03
+package ru.eyelog.textgames.fragments.fragment04
 
 import android.text.SpannableStringBuilder
 

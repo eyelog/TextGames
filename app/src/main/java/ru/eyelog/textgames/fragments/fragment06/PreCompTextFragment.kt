@@ -1,4 +1,4 @@
-package ru.eyelog.textgames.fragments.fragment04
+package ru.eyelog.textgames.fragments.fragment06
 
 import android.os.Bundle
 import android.view.LayoutInflater

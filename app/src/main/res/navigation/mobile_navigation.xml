@@ -14,15 +14,15 @@
         android:label="@string/style_item" />
     <fragment
         android:id="@+id/spannableFragment"
-        android:name="ru.eyelog.textgames.fragments.fragment02.SpannableFragment"
+        android:name="ru.eyelog.textgames.fragments.fragment03.SpannableFragment"
         android:label="@string/spannable_item" />
     <fragment
         android:id="@+id/spanFlagsFragment"
-        android:name="ru.eyelog.textgames.fragments.fragment03.SpanFlagsFragment"
+        android:name="ru.eyelog.textgames.fragments.fragment04.SpanFlagsFragment"
         android:label="@string/spannable_flags_item" />
     <fragment
         android:id="@+id/preCompFragment"
-        android:name="ru.eyelog.textgames.fragments.fragment04.PreCompTextFragment"
+        android:name="ru.eyelog.textgames.fragments.fragment06.PreCompTextFragment"
         android:label="@string/pre_comp_item" />
     <fragment
         android:id="@+id/pagerFragment"

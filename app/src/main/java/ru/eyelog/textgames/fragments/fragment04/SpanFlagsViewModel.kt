@@ -1,12 +1,10 @@
-package ru.eyelog.textgames.fragments.fragment03
+package ru.eyelog.textgames.fragments.fragment04
 
 import android.content.Context
 import android.graphics.Color
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
-import androidx.core.text.toSpannable
-import androidx.core.text.toSpanned
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LiveData

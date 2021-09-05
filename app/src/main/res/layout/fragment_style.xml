@@ -27,7 +27,7 @@
                 android:id="@+id/tvSimpleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAppearance="@style/TextAppearanceSample"
                 android:paddingTop="32dp"
                 tools:text="Some text" />
 
@@ -35,7 +35,8 @@
                 android:id="@+id/tvBreakStrategySimpleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAppearance="@style/TextAppearanceSample"
+                android:theme="@style/TextThemeSample"
                 android:paddingTop="32dp"
                 tools:text="Some text" />
 
@@ -43,7 +44,9 @@
                 android:id="@+id/tvBreakStrategyBalancedText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAppearance="@style/TextAppearanceSample"
+                android:theme="@style/TextThemeSample"
+                style="@style/TextStyleSample"
                 android:paddingTop="32dp"
                 tools:text="Some text" />
 
@@ -51,7 +54,9 @@
                 android:id="@+id/tvHyphFreqNormalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAppearance="@style/TextAppearanceSample"
+                android:theme="@style/TextThemeSample"
+                style="@style/TextStyleSample"
                 android:paddingTop="32dp"
                 tools:text="Some text" />
 
@@ -59,7 +64,9 @@
                 android:id="@+id/tvHyphFreqFullText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAppearance="@style/TextAppearanceSample"
+                android:theme="@style/TextThemeSample"
+                style="@style/TextStyleSample"
                 android:paddingTop="32dp"
                 tools:text="Some text" />
 
@@ -67,7 +74,9 @@
                 android:id="@+id/tvMultyText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAppearance="@style/TextAppearanceSample"
+                android:theme="@style/TextThemeSample"
+                style="@style/TextStyleSample"
                 android:paddingTop="32dp"
                 tools:text="Some text" />
         </LinearLayout>

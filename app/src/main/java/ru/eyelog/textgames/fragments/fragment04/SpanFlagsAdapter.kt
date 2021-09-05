@@ -1,6 +1,5 @@
-package ru.eyelog.textgames.fragments.fragment03
+package ru.eyelog.textgames.fragments.fragment04
 
-import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
